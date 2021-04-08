@@ -1,6 +1,7 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
-#include<QMessageBox>
+#include<QTextStream>
+
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
     , ui(new Ui::MainWindow)
@@ -14,26 +15,41 @@ MainWindow::~MainWindow()
 }
 
 
-void MainWindow::on_pushButton_clicked()
+void MainWindow::on_checkBox_clicked()
 {
+   QTextStream stream(stdout);
    if(ui->checkBox->isChecked())
    {
-       QMessageBox::information(this,"Sushmitha 212218203031","user likes mango");
+       stream<<"option 1 is checked";
    }
    else
    {
-       QMessageBox::information(this,"Sushmitha 212218203031","user  does not like mango");
+       stream<<"option 1 is unchecked";
    }
 }
 
-void MainWindow::on_checkBox_stateChanged(int arg1)
+void MainWindow::on_checkBox_2_clicked()
 {
-    if(arg1)
+    QTextStream stream(stdout);
+    if(ui->checkBox_2->isChecked())
     {
-        QMessageBox::information(this,"Sushmitha 212218203031","user likes mango");
+        stream<<"option 2 is checked";
     }
     else
     {
-        QMessageBox::information(this,"Sushmitha 212218203031","user does not like mango");
+        stream<<"option 2 is unchecked";
+    }
+}
+
+void MainWindow::on_checkBox_3_clicked()
+{
+    QTextStream stream(stdout);
+    if(ui->checkBox_3->isChecked())
+    {
+        stream<<"option 3 is checked";
+    }
+    else
+    {
+        stream<<"option 3 is unchecked";
     }
 }
